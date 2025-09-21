@@ -1,0 +1,116 @@
+•Adicionar Fornecedores
+
+# Passo 1
+Método: POST
+URL: http://localhost:8080/fornecedores
+Body:
+{
+    "nome": "Laticínios Premium"
+}
+
+# Passo 2
+Método: POST
+URL: http://localhost:8080/fornecedores
+Body:
+{
+    "nome": "Bebidas Nacionais"
+}
+
+# Passo 3
+Método: POST
+URL: http://localhost:8080/fornecedores
+Body:
+{
+    "nome": "Hortifruti Verde"
+}
+
+•Adicionar Categorias / integrando Fornecedor Principal (Relação Um-para-Um)
+
+# Passo 1
+Método: POST
+URL: http://localhost:8080/categorias
+Body:
+{
+    "nome": "Laticínios",
+    "fornecedorPrincipal": { "id": 1 }
+}
+
+# Passo 2
+Método: POST
+URL: http://localhost:8080/categorias
+Body:
+{
+    "nome": "Bebidas",
+    "fornecedorPrincipal": { "id": 2 }
+}
+
+# Passo 3
+Método: POST
+URL: http://localhost:8080/categorias
+Body:
+{
+    "nome": "Frutas e Verduras",
+    "fornecedorPrincipal": { "id": 3 }
+}
+
+•Adicionar os Produtos (Relações Muitos-para-Um e Muitos-para-Muitos)
+
+# Passo 1
+Método: POST
+URL: http://localhost:8080/produtos
+Body:
+{
+    "nome": "Iogurte Natural",
+    "preco": 8.50,
+    "categoria": { "id": 1 },
+    "fornecedores": [
+        { "id": 1 }
+    ]
+}
+
+# Passo 2
+Método: POST
+URL: http://localhost:8080/produtos
+Body:
+{
+    "nome": "Refrigerante de Cola 2L",
+    "preco": 9.00,
+    "categoria": { "id": 2 },
+    "fornecedores": [
+        { "id": 1 },
+        { "id": 2 }
+    ]
+}
+
+# Passo 3
+Método: POST
+URL: http://localhost:8080/produtos
+Body:
+{
+    "nome": "Maçã Fuji (Kg)",
+    "preco": 12.99,
+    "categoria": { "id": 3 },
+    "fornecedores": [
+        { "id": 3 }
+    ]
+}
+
+•Listar todos os Fornecedores
+Método: GET
+URL: http://localhost:8080/fornecedores
+
+•Listar todas as Categorias
+Método: GET
+URL: http://localhost:8080/categorias
+
+•Listar todos os Produtos
+Método: GET
+URL: http://localhost:8080/produtos
+
+•Deletar Produto / exemplo: Refrigerante
+Método: DELETE
+URL: http://localhost:8080/produtos/2
+
+•Confirmar que o Produto foi deletado
+Método: GET
+URL: http://localhost:8080/produtos
