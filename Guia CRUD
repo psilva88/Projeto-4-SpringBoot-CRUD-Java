@@ -60,7 +60,7 @@ Método: POST
 URL: http://localhost:8080/produtos
 Body:
 {
-    "nome": "Iogurte Natural",
+    "nome": "Iogurte Natural de Morango",
     "preco": 8.50,
     "categoria": { "id": 1 },
     "fornecedores": [
@@ -73,7 +73,7 @@ Método: POST
 URL: http://localhost:8080/produtos
 Body:
 {
-    "nome": "Refrigerante de Cola 2L",
+    "nome": "Refrigerante Sprite 2L",
     "preco": 9.00,
     "categoria": { "id": 2 },
     "fornecedores": [
@@ -87,7 +87,7 @@ Método: POST
 URL: http://localhost:8080/produtos
 Body:
 {
-    "nome": "Maçã Fuji (Kg)",
+    "nome": "Maçã Verde (Kg)",
     "preco": 12.99,
     "categoria": { "id": 3 },
     "fornecedores": [
